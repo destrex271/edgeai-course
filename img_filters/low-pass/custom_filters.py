@@ -1,0 +1,1 @@
+# cv2 filter2D(image, depth, kernell)
