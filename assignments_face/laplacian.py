@@ -7,7 +7,7 @@ vid_feed = cv2.VideoCapture(0)
 
 while True:
     ret, frame = vid_feed.read()
-    frame = cv2.filter2D(frame, -1, lap_kernel*5)
+    frame = cv2.filter2D(frame, -1, lap_kernel*10)
 
     cv2.imshow('fr', frame)
 
