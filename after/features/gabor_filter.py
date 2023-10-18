@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import cv2
 
 ims = []
-fig = plt.figure()
+fig = plt.figure(figsize=(100,100))
 k = 1
-for i in range(0, 10):
+for i in range(0, 40):
     g_kernel = cv2.getGaborKernel((21, 21), 8.0, i*np.pi/4, 10.0, 0.5, 0, ktype=cv2.CV_32F)
     img = cv2.imread('dem.jpg')
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -26,8 +26,8 @@ for i in range(0, 10):
 # for im in ims:
 #     plt.subplot(im)
 for i in range(len(ims)):
-    ax = fig.add_subplot(2, 5, i + 1)
-    ax.imshow(ims[i], extent=(0, 900, 0, 900))
+    ax = fig.add_subplot(5, 8, i + 1)
+    ax.imshow(ims[i], extent=(0, 1000, 0, 1000))
 
 fig.tight_layout()
 plt.show()
